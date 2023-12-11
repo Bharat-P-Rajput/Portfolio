@@ -30,7 +30,7 @@
   color: white;
 }
 .main {
-  background: url("/bg3.jpeg") repeat 0 0;
+  background: url("bg.jpeg") repeat 0 0;
   /* background: transparent;
   backdrop-filter: blur(10px); */
   /* background-color: grey; */
