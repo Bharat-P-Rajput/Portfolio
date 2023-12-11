@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharat Rajput - Frontend Developer, ML Enthusiast, Programmer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="Container">
+      <div class="sidebar sidebarGo">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Intro.html">My Intro</a></li>
+            <li>
+              <a href="/Resume Rajput Bharat.pdf" target="_blank">Resume</a>
+            </li>
+            <li><a href="/Projects.html">Project</a></li>
+            <li><a href="/Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main">
+        <div class="ToContact">
+          <form>
+            <h1>Feel Free to Contact</h1>
+            <div class="mb-3">
+              <label for="exampleInputEmail" class="form-label"
+                ><h5 style="color: white">Your Email goes Here</h5></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="clientEmail"
+                aria-describedby="emailHere"
+              />
+              <div id="clientEmail" class="form-text">
+                <h5 style="color: white">Trust me Your Email is safe...</h5>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="clientPhone" class="form-label"
+                ><h5 style="color: white">Please Enter Phone Number</h5></label
+              >
+              <input type="phone" class="form-control" id="clientPhone" />
+            </div>
+            <div class="mb-3" id="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label for="exampleCheck1" class="form-check-label"
+                ><h5 style="color: white">Check me out</h5></label
+              >
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onclick="submitForm()"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="hamburger">
+          <img class="ham" src="hamburger.png" width="23" />
+          <img class="cross" src="cross.png" width="23" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      function submitForm() {
+        var email = document.getElementById("clientEmail").value;
+        var mobile = document.getElementById("clientPhone").value;
+
+        // Check if localStorage is supported
+        if (typeof Storage !== "undefined") {
+          // Get existing data or initialize as an empty array
+          var existingData =
+            JSON.parse(localStorage.getItem("contactData")) || [];
+
+          // Add new data
+          existingData.push({ email: email, mobile: mobile });
+
+          // Save the updated data to localStorage
+          localStorage.setItem("contactData", JSON.stringify(existingData));
+
+          alert("Data submitted successfully! \n You will Get Notfied soon");
+        } else {
+          alert(
+            "Sorry, your browser does not support web storage. Data won't be saved."
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
